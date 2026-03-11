@@ -1,0 +1,60 @@
+[2026-03-11T11:19:14.373+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: setup_data_warehouse.create_airflow_connection manual__2026-03-11T11:19:12.472706+00:00 [queued]>
+[2026-03-11T11:19:14.400+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: setup_data_warehouse.create_airflow_connection manual__2026-03-11T11:19:12.472706+00:00 [queued]>
+[2026-03-11T11:19:14.401+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 1
+[2026-03-11T11:19:14.437+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): create_airflow_connection> on 2026-03-11 11:19:12.472706+00:00
+[2026-03-11T11:19:14.455+0000] {standard_task_runner.py:60} INFO - Started process 364 to run task
+[2026-03-11T11:19:14.478+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'setup_data_warehouse', 'create_***_connection', 'manual__2026-03-11T11:19:12.472706+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/setup_data_warehouse.py', '--cfg-path', '/tmp/tmppimp_4lm']
+[2026-03-11T11:19:14.582+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask create_***_connection
+[2026-03-11T11:19:14.655+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-03-11T11:19:14.843+0000] {task_command.py:423} INFO - Running <TaskInstance: setup_data_warehouse.create_airflow_connection manual__2026-03-11T11:19:12.472706+00:00 [running]> on host c224524d9170
+[2026-03-11T11:19:15.234+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='setup_data_warehouse' AIRFLOW_CTX_TASK_ID='create_***_connection' AIRFLOW_CTX_EXECUTION_DATE='2026-03-11T11:19:12.472706+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-11T11:19:12.472706+00:00'
+[2026-03-11T11:19:15.321+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/crypto.py", line 86, in get_fernet
+    [Fernet(fernet_part.encode("utf-8")) for fernet_part in fernet_key.split(",")]
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/crypto.py", line 86, in <listcomp>
+    [Fernet(fernet_part.encode("utf-8")) for fernet_part in fernet_key.split(",")]
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/cryptography/fernet.py", line 40, in __init__
+    raise ValueError(
+ValueError: Fernet key must be 32 url-safe base64-encoded bytes.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/setup_data_warehouse.py", line 46, in create_airflow_connection
+    new_conn = Connection(
+               ^^^^^^^^^^^
+  File "<string>", line 4, in __init__
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/state.py", line 481, in _initialize_instance
+    with util.safe_reraise():
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.11/site-packages/sqlalchemy/orm/state.py", line 479, in _initialize_instance
+    return manager.original_init(*mixed[1:], **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/connection.py", line 134, in __init__
+    self.password = password
+    ^^^^^^^^^^^^^
+  File "<string>", line 1, in __set__
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/connection.py", line 307, in set_password
+    fernet = get_fernet()
+             ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/crypto.py", line 90, in get_fernet
+    raise AirflowException(f"Could not create Fernet object: {value_error}")
+airflow.exceptions.AirflowException: Could not create Fernet object: Fernet key must be 32 url-safe base64-encoded bytes.
+[2026-03-11T11:19:15.347+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=setup_data_warehouse, task_id=create_***_connection, execution_date=20260311T111912, start_date=20260311T111914, end_date=20260311T111915
+[2026-03-11T11:19:15.398+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 4 for task create_***_connection (Could not create Fernet object: Fernet key must be 32 url-safe base64-encoded bytes.; 364)
+[2026-03-11T11:19:15.452+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-03-11T11:19:15.607+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

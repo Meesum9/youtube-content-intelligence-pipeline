@@ -1,0 +1,23 @@
+[2026-03-11T11:21:22.992+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_data_pipeline.get_video_data manual__2026-03-11T11:20:42.945120+00:00 [queued]>
+[2026-03-11T11:21:23.023+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_data_pipeline.get_video_data manual__2026-03-11T11:20:42.945120+00:00 [queued]>
+[2026-03-11T11:21:23.026+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 2
+[2026-03-11T11:21:23.067+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): get_video_data> on 2026-03-11 11:20:42.945120+00:00
+[2026-03-11T11:21:23.077+0000] {standard_task_runner.py:60} INFO - Started process 548 to run task
+[2026-03-11T11:21:23.083+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'youtube_data_pipeline', 'get_video_data', 'manual__2026-03-11T11:20:42.945120+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/youtube_pipeline_dag.py', '--cfg-path', '/tmp/tmpv_8s48qw']
+[2026-03-11T11:21:23.094+0000] {standard_task_runner.py:88} INFO - Job 23: Subtask get_video_data
+[2026-03-11T11:21:23.177+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-03-11T11:21:23.401+0000] {task_command.py:423} INFO - Running <TaskInstance: youtube_data_pipeline.get_video_data manual__2026-03-11T11:20:42.945120+00:00 [running]> on host c224524d9170
+[2026-03-11T11:21:23.924+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='youtube_data_pipeline' AIRFLOW_CTX_TASK_ID='get_video_data' AIRFLOW_CTX_EXECUTION_DATE='2026-03-11T11:20:42.945120+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-11T11:20:42.945120+00:00'
+[2026-03-11T11:21:46.291+0000] {logging_mixin.py:188} INFO - Video data saved to /app/data/yt_data_20260311_112145.json
+[2026-03-11T11:21:46.293+0000] {logging_mixin.py:188} INFO - Retrieved data for 951 videos
+[2026-03-11T11:21:46.294+0000] {logging_mixin.py:188} INFO - 
+First 5 videos:
+[2026-03-11T11:21:46.295+0000] {logging_mixin.py:188} INFO - 1. My Chocolate Factory Blew Up - 6149795 views
+[2026-03-11T11:21:46.296+0000] {logging_mixin.py:188} INFO - 2. Survive 30 Days Stranded With Your Ex, Win $250,000 - 60047434 views
+[2026-03-11T11:21:46.298+0000] {logging_mixin.py:188} INFO - 3. Would You Steal Money From A Stranger? - 41106300 views
+[2026-03-11T11:21:46.299+0000] {logging_mixin.py:188} INFO - 4. Subscribe, I’ll Double Your Bank Account - 44182439 views
+[2026-03-11T11:21:46.300+0000] {logging_mixin.py:188} INFO - 5. I Built a School in Mexico - 13996610 views
+[2026-03-11T11:21:46.306+0000] {python.py:201} INFO - Done. Returned value was: /app/data/yt_data_20260311_112145.json
+[2026-03-11T11:21:46.421+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=youtube_data_pipeline, task_id=get_video_data, execution_date=20260311T112042, start_date=20260311T112122, end_date=20260311T112146
+[2026-03-11T11:21:46.486+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-11T11:21:46.599+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

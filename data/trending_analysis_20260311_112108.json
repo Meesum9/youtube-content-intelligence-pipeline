@@ -1,0 +1,26 @@
+{
+    "total_videos": 50,
+    "avg_views": 322334,
+    "avg_likes": 15015,
+    "avg_comments": 1152,
+    "top_channels": {
+        "1900Rugrat": 1,
+        "Netflix": 1,
+        "TheBurntPeanut": 1,
+        "MGKVEVO": 1,
+        "Nintendo of America": 1,
+        "FOX News": 1,
+        "Tonton Malele": 1,
+        "Minecraft": 1,
+        "SMii7Yplus": 1,
+        "Diljit Dosanjh": 1
+    },
+    "categories": {
+        "20": 19,
+        "10": 13,
+        "24": 12,
+        "1": 5,
+        "17": 1
+    },
+    "duration_stats": {}
+}

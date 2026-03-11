@@ -1,0 +1,16 @@
+[2026-03-11T11:21:14.434+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_trending_tracker.analyze_trending_patterns scheduled__2026-03-11T08:00:00+00:00 [queued]>
+[2026-03-11T11:21:14.478+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_trending_tracker.analyze_trending_patterns scheduled__2026-03-11T08:00:00+00:00 [queued]>
+[2026-03-11T11:21:14.480+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 2
+[2026-03-11T11:21:14.552+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): analyze_trending_patterns> on 2026-03-11 08:00:00+00:00
+[2026-03-11T11:21:14.567+0000] {standard_task_runner.py:60} INFO - Started process 527 to run task
+[2026-03-11T11:21:14.578+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'youtube_trending_tracker', 'analyze_trending_patterns', 'scheduled__2026-03-11T08:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/youtube_trending_dag.py', '--cfg-path', '/tmp/tmp5h52z44f']
+[2026-03-11T11:21:14.589+0000] {standard_task_runner.py:88} INFO - Job 20: Subtask analyze_trending_patterns
+[2026-03-11T11:21:14.667+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-03-11T11:21:14.925+0000] {task_command.py:423} INFO - Running <TaskInstance: youtube_trending_tracker.analyze_trending_patterns scheduled__2026-03-11T08:00:00+00:00 [running]> on host c224524d9170
+[2026-03-11T11:21:15.418+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='youtube_trending_tracker' AIRFLOW_CTX_TASK_ID='analyze_trending_patterns' AIRFLOW_CTX_EXECUTION_DATE='2026-03-11T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-11T08:00:00+00:00'
+[2026-03-11T11:21:15.507+0000] {logging_mixin.py:188} INFO - Trending analysis saved to /app/data/trending_analysis_20260311_112115.json
+[2026-03-11T11:21:15.508+0000] {logging_mixin.py:188} INFO - Top channels: ['1900Rugrat', 'Netflix', 'TheBurntPeanut']
+[2026-03-11T11:21:15.510+0000] {python.py:201} INFO - Done. Returned value was: /app/data/trending_analysis_20260311_112115.json
+[2026-03-11T11:21:15.665+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=youtube_trending_tracker, task_id=analyze_trending_patterns, execution_date=20260311T080000, start_date=20260311T112114, end_date=20260311T112115
+[2026-03-11T11:21:15.768+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-11T11:21:15.883+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

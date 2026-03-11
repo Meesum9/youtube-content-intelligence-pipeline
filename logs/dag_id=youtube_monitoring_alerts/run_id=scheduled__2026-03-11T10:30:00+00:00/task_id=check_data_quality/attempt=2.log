@@ -1,0 +1,15 @@
+[2026-03-11T11:31:05.635+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_monitoring_alerts.check_data_quality scheduled__2026-03-11T10:30:00+00:00 [queued]>
+[2026-03-11T11:31:05.719+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_monitoring_alerts.check_data_quality scheduled__2026-03-11T10:30:00+00:00 [queued]>
+[2026-03-11T11:31:05.721+0000] {taskinstance.py:2171} INFO - Starting attempt 2 of 3
+[2026-03-11T11:31:05.776+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): check_data_quality> on 2026-03-11 10:30:00+00:00
+[2026-03-11T11:31:05.796+0000] {standard_task_runner.py:60} INFO - Started process 1142 to run task
+[2026-03-11T11:31:05.834+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'youtube_monitoring_alerts', 'check_data_quality', 'scheduled__2026-03-11T10:30:00+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/youtube_monitoring_dag.py', '--cfg-path', '/tmp/tmpu6wk8zye']
+[2026-03-11T11:31:05.853+0000] {standard_task_runner.py:88} INFO - Job 30: Subtask check_data_quality
+[2026-03-11T11:31:06.007+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-03-11T11:31:06.318+0000] {task_command.py:423} INFO - Running <TaskInstance: youtube_monitoring_alerts.check_data_quality scheduled__2026-03-11T10:30:00+00:00 [running]> on host c224524d9170
+[2026-03-11T11:31:06.816+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='youtube_monitoring_alerts' AIRFLOW_CTX_TASK_ID='check_data_quality' AIRFLOW_CTX_EXECUTION_DATE='2026-03-11T10:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-11T10:30:00+00:00'
+[2026-03-11T11:31:06.859+0000] {logging_mixin.py:188} INFO - Data Quality Score: 96.29%
+[2026-03-11T11:31:06.861+0000] {python.py:201} INFO - Done. Returned value was: {'timestamp': '2026-03-11T11:31:06.852021', 'file_name': 'yt_data_20260311_112145.json', 'total_videos': 951, 'missing_titles': 0, 'missing_descriptions': 141, 'zero_views': 0, 'invalid_dates': 0, 'quality_score': 96.29337539432177}
+[2026-03-11T11:31:07.046+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=youtube_monitoring_alerts, task_id=check_data_quality, execution_date=20260311T103000, start_date=20260311T113105, end_date=20260311T113107
+[2026-03-11T11:31:07.132+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-11T11:31:07.293+0000] {taskinstance.py:3281} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,15 @@
+[2026-03-11T11:30:08.922+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_monitoring_alerts.check_pipeline_performance scheduled__2026-03-11T11:00:00+00:00 [queued]>
+[2026-03-11T11:30:08.992+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_monitoring_alerts.check_pipeline_performance scheduled__2026-03-11T11:00:00+00:00 [queued]>
+[2026-03-11T11:30:08.996+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2026-03-11T11:30:09.100+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): check_pipeline_performance> on 2026-03-11 11:00:00+00:00
+[2026-03-11T11:30:09.114+0000] {standard_task_runner.py:60} INFO - Started process 1080 to run task
+[2026-03-11T11:30:09.128+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'youtube_monitoring_alerts', 'check_pipeline_performance', 'scheduled__2026-03-11T11:00:00+00:00', '--job-id', '29', '--raw', '--subdir', 'DAGS_FOLDER/youtube_monitoring_dag.py', '--cfg-path', '/tmp/tmpzg8vf5n6']
+[2026-03-11T11:30:09.139+0000] {standard_task_runner.py:88} INFO - Job 29: Subtask check_pipeline_performance
+[2026-03-11T11:30:09.266+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-03-11T11:30:09.525+0000] {task_command.py:423} INFO - Running <TaskInstance: youtube_monitoring_alerts.check_pipeline_performance scheduled__2026-03-11T11:00:00+00:00 [running]> on host c224524d9170
+[2026-03-11T11:30:10.040+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='youtube_monitoring_alerts' AIRFLOW_CTX_TASK_ID='check_pipeline_performance' AIRFLOW_CTX_EXECUTION_DATE='2026-03-11T11:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-11T11:00:00+00:00'
+[2026-03-11T11:30:10.049+0000] {logging_mixin.py:188} INFO - Performance report generated with 0 alerts
+[2026-03-11T11:30:10.050+0000] {python.py:201} INFO - Done. Returned value was: {'timestamp': '2026-03-11T11:30:10.045080', 'dag_performance': {'youtube_data_pipeline': {'avg_runtime_minutes': 15, 'success_rate_24h': 100, 'last_run_status': 'success'}, 'youtube_analytics_pipeline': {'avg_runtime_minutes': 8, 'success_rate_24h': 100, 'last_run_status': 'success'}, 'youtube_trending_tracker': {'avg_runtime_minutes': 5, 'success_rate_24h': 95, 'last_run_status': 'success'}}, 'alerts': []}
+[2026-03-11T11:30:10.247+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=youtube_monitoring_alerts, task_id=check_pipeline_performance, execution_date=20260311T110000, start_date=20260311T113008, end_date=20260311T113010
+[2026-03-11T11:30:10.346+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-11T11:30:10.483+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,16 @@
+[2026-03-11T11:20:50.484+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_trending_tracker.get_trending_videos scheduled__2026-03-11T08:00:00+00:00 [queued]>
+[2026-03-11T11:20:50.531+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_trending_tracker.get_trending_videos scheduled__2026-03-11T08:00:00+00:00 [queued]>
+[2026-03-11T11:20:50.538+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 2
+[2026-03-11T11:20:50.662+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): get_trending_videos> on 2026-03-11 08:00:00+00:00
+[2026-03-11T11:20:50.713+0000] {standard_task_runner.py:60} INFO - Started process 483 to run task
+[2026-03-11T11:20:50.734+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'youtube_trending_tracker', 'get_trending_videos', 'scheduled__2026-03-11T08:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/youtube_trending_dag.py', '--cfg-path', '/tmp/tmpscm219n8']
+[2026-03-11T11:20:50.748+0000] {standard_task_runner.py:88} INFO - Job 10: Subtask get_trending_videos
+[2026-03-11T11:20:51.061+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-03-11T11:20:51.380+0000] {task_command.py:423} INFO - Running <TaskInstance: youtube_trending_tracker.get_trending_videos scheduled__2026-03-11T08:00:00+00:00 [running]> on host c224524d9170
+[2026-03-11T11:20:51.969+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='youtube_trending_tracker' AIRFLOW_CTX_TASK_ID='get_trending_videos' AIRFLOW_CTX_EXECUTION_DATE='2026-03-11T08:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2026-03-11T08:00:00+00:00'
+[2026-03-11T11:21:12.665+0000] {logging_mixin.py:188} INFO - Trending data saved to /app/data/trending_20260311_112112.json
+[2026-03-11T11:21:12.670+0000] {logging_mixin.py:188} INFO - Retrieved 50 trending videos
+[2026-03-11T11:21:12.682+0000] {python.py:201} INFO - Done. Returned value was: /app/data/trending_20260311_112112.json
+[2026-03-11T11:21:12.889+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=youtube_trending_tracker, task_id=get_trending_videos, execution_date=20260311T080000, start_date=20260311T112050, end_date=20260311T112112
+[2026-03-11T11:21:13.040+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2026-03-11T11:21:13.486+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check

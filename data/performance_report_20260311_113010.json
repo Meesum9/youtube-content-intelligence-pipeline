@@ -1,0 +1,21 @@
+{
+    "timestamp": "2026-03-11T11:30:10.045080",
+    "dag_performance": {
+        "youtube_data_pipeline": {
+            "avg_runtime_minutes": 15,
+            "success_rate_24h": 100,
+            "last_run_status": "success"
+        },
+        "youtube_analytics_pipeline": {
+            "avg_runtime_minutes": 8,
+            "success_rate_24h": 100,
+            "last_run_status": "success"
+        },
+        "youtube_trending_tracker": {
+            "avg_runtime_minutes": 5,
+            "success_rate_24h": 95,
+            "last_run_status": "success"
+        }
+    },
+    "alerts": []
+}

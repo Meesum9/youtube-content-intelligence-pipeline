@@ -1,0 +1,35 @@
+[2026-03-11T11:21:02.358+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: youtube_monitoring_alerts.check_data_quality manual__2026-03-11T11:20:47.544321+00:00 [queued]>
+[2026-03-11T11:21:02.398+0000] {taskinstance.py:1957} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: youtube_monitoring_alerts.check_data_quality manual__2026-03-11T11:20:47.544321+00:00 [queued]>
+[2026-03-11T11:21:02.400+0000] {taskinstance.py:2171} INFO - Starting attempt 1 of 3
+[2026-03-11T11:21:02.449+0000] {taskinstance.py:2192} INFO - Executing <Task(PythonOperator): check_data_quality> on 2026-03-11 11:20:47.544321+00:00
+[2026-03-11T11:21:02.470+0000] {standard_task_runner.py:60} INFO - Started process 504 to run task
+[2026-03-11T11:21:02.480+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'youtube_monitoring_alerts', 'check_data_quality', 'manual__2026-03-11T11:20:47.544321+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/youtube_monitoring_dag.py', '--cfg-path', '/tmp/tmpofuz2uyh']
+[2026-03-11T11:21:02.490+0000] {standard_task_runner.py:88} INFO - Job 17: Subtask check_data_quality
+[2026-03-11T11:21:02.586+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.11/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-03-11T11:21:02.859+0000] {task_command.py:423} INFO - Running <TaskInstance: youtube_monitoring_alerts.check_data_quality manual__2026-03-11T11:20:47.544321+00:00 [running]> on host c224524d9170
+[2026-03-11T11:21:03.403+0000] {taskinstance.py:2481} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='youtube_monitoring_alerts' AIRFLOW_CTX_TASK_ID='check_data_quality' AIRFLOW_CTX_EXECUTION_DATE='2026-03-11T11:20:47.544321+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-11T11:20:47.544321+00:00'
+[2026-03-11T11:21:03.410+0000] {taskinstance.py:2699} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/dags/youtube_monitoring_dag.py", line 80, in check_data_quality
+    raise ValueError("No YouTube data files found")
+ValueError: No YouTube data files found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/youtube_monitoring_dag.py", line 140, in check_data_quality
+    raise Exception(f"Data Quality Check Failed: {e}")
+Exception: Data Quality Check Failed: No YouTube data files found
+[2026-03-11T11:21:03.506+0000] {taskinstance.py:1138} INFO - Marking task as UP_FOR_RETRY. dag_id=youtube_monitoring_alerts, task_id=check_data_quality, execution_date=20260311T112047, start_date=20260311T112102, end_date=20260311T112103
+[2026-03-11T11:21:03.606+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 17 for task check_data_quality (Data Quality Check Failed: No YouTube data files found; 504)
+[2026-03-11T11:21:03.662+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2026-03-11T11:21:03.820+0000] {taskinstance.py:3281} INFO - 0 downstream tasks scheduled from follow-on schedule check
